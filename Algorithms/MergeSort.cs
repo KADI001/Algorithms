@@ -45,9 +45,10 @@
     public static int[] Merge(int[] left, int[] right, bool toLess = false)
     {
         int leftP = 0, rightP = 0;
-        int[] array = new int[left.Length + right.Length];
+        int mergedArrayLength = left.Length + right.Length;
+        int[] array = new int[mergedArrayLength];
 
-        for (int i = 0; i < left.Length + right.Length; i++)
+        for (int i = 0; i < mergedArrayLength; i++)
         {
             if (leftP < left.Length && rightP < right.Length)
             {
