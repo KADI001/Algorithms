@@ -1,3 +1,5 @@
+using Algorithms;
+
 namespace AlgorithmsTests;
 
 public class MergeSortTests

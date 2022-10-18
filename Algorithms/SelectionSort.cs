@@ -1,4 +1,6 @@
-﻿public class SelectionSort
+﻿namespace Algorithms;
+
+public class SelectionSort
 {
     public static void SortToMore(int[] array)
     {

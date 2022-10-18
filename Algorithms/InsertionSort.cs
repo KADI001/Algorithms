@@ -1,4 +1,6 @@
-﻿public class InsertionSort
+﻿namespace Algorithms;
+
+public class InsertionSort
 {
     public static void SortToMore(int[] array)
     {

@@ -1,4 +1,6 @@
-﻿public class QuickSort
+﻿namespace Algorithms;
+
+public class QuickSort
 {
     public static void SortToMore(int[] array) => 
         Sort(array, 0, array.Length - 1, false);

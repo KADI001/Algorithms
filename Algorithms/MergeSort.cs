@@ -1,4 +1,6 @@
-﻿public class MergeSort
+﻿namespace Algorithms;
+
+public class MergeSort
 {
     public static int[] SortToMore(int[] array)
     {

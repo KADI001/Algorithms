@@ -3,4 +3,9 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::BEA66F74-4EA9-4BB9-95AB-8D281CE6A82E::net6.0::AlgorithmsTests.CountSortTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=84488c4a_002Da0c9_002D4a19_002D9872_002Db750fbb0e569/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="DijksterPathFinderTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::BEA66F74-4EA9-4BB9-95AB-8D281CE6A82E::net6.0::AlgorithmsTests.DijksterPathFinderTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

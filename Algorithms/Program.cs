@@ -1,91 +1,67 @@
-﻿Dictionary<int, int[]?> edges = new Dictionary<int, int[]?>()
+﻿using System.Reflection;
+
+Dictionary<int, int[]?> graph = new Dictionary<int, int[]?>()
 {
-    {1, new int[]{3}},
-    {2, new int[]{4}},
-    {3, new int[]{4, 5}},
-    {4, new int[]{6}},
-    {5, new int[]{6}},
-    {6, new int[]{7, 11}},
-    {7, new int[]{8}},
-    {8, new int[]{13}},
-    {9, new int[]{10}},
-    {10, new int[]{11}},
-    {11, new int[]{12}},
-    {12, new int[]{13}},
-    {13, new int[]{14}},
-    {14, null},
+    {1, new []{2, 14, 15, 16, 17, 18, 19, 20}},
+    {2, new []{3}},
+    {3, new []{4}},
+    {4, new []{5}},
+    {5, new []{6}},
+    {6, new []{7}},
+    {7, new []{8}},
+    {8, new []{9}},
+    {9, new []{10}},
+    {10, new []{11}},
+    {11, new []{12}},
+    {12, new []{13}},
+    {13, null},
+    {14, new []{3}},
+    {15, new []{5}},
+    {16, new []{5}},
+    {17, new []{8}},
+    {18, new []{8}},
+    {19, new []{8}},
+    {20, new []{10}},
 };
 
-var sort = new TopologicalSort().Sort(edges);
-int a = 0;
+List<(int, int, int)> weight = new List<(int, int, int)>()
+{
+    (1, 2, -6),
+    (1, 14, -2),
+    (1, 15, -4),
+    (1, 16, -3),
+    (1, 17, -4),
+    (1, 18, -3),
+    (1, 19, -2),
+    (1, 20, -3),
+    (2, 3, -15),
+    (3, 4, -4),
+    (4, 5, -1),
+    (5, 6, -2),
+    (6, 7, -1),
+    (7, 8, -4),
+    (8, 9, -1),
+    (9, 10, -1),
+    (10, 11, -3),
+    (11, 12, -1),
+    (12, 13, 0),
+    (14, 3, -15),
+    (15, 5, -1),
+    (16, 5, -1),
+    (17, 3, -4),
+    (18, 3, -4),
+    (19, 3, -4),
+    (20, 10, -1),
+};
+
+Dijkstra.Find(graph, weight, 1);
+int b = 2;
 
 #region Search
 
 #endregion
 
 #region Sort
-
-public class TopologicalSort
-{
-    public int[] Sort(Dictionary<int, int[]?> graph)
-    {
-        Queue<int> next = new Queue<int>();
-        int[] numberPointEnters = new int[graph.Keys.Count];
-        int[] points = graph.Keys.ToArray();
-
-        for (int i = 0; i < numberPointEnters.Length; i++)
-        {
-            int number = 0;
-
-            for (int j = 1; j <= graph.Keys.Count; j++)
-            {
-                if(i + 1 == j || graph[j] == null)
-                    continue;
-
-                for (int k = 0; k < graph[j].Length; k++)
-                {
-                    if (graph[j][k] == points[i])
-                        number++;
-                }
-            }
-
-            numberPointEnters[i] = number;
-        }
-
-        int weightS = graph.Keys.Count;
-
-        int[] result = new int[weightS];
-
-        for (int q = 0; q < weightS; q++)
-        {
-            for (int i = 0; i < graph.Keys.Count; i++)
-            {
-                if (numberPointEnters[i] == -1 || next.Contains(i + 1))
-                    continue;
-
-                if (numberPointEnters[i] == 0)
-                    next.Enqueue(i + 1);
-            }
-
-            int point = next.Peek();
-            result[q] = point;
-            numberPointEnters[point - 1]--;
-
-            if (graph[point] != null)
-            {
-                for (int j = 0; j < graph[point].Length; j++)
-                {
-                    int nextPoint = graph[point][j];
-                    numberPointEnters[nextPoint - 1]--;
-                }
-
-                next.Dequeue();
-            }
-        }
-
-        return result;
-    }
-}
 
 /*
 public class BitwiseSort

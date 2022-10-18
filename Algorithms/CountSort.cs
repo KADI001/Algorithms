@@ -1,4 +1,6 @@
-﻿public class CountSort
+﻿namespace Algorithms;
+
+public class CountSort
 {
     public static int[] SortToMore(int[] array, int arrayKeysRange)
     {
